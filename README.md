@@ -1,2 +1,2 @@
 # RBP
-RBP：Improved Residual Networks with Bilinearl Pooling
+RBP：Improved Residual Networks with Bilinear Pooling
