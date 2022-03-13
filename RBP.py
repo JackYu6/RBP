@@ -29,7 +29,7 @@ class RBP(nn.Module):
             nn.BatchNorm2d(backbone.fc.in_features // dr_n, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True),
             nn.ReLU(inplace=True)
         )
-        self.classifiers = nn.Sequential(nn.Linear((backbone.fc.in_features // dr_n) ** 2, num_classes))
+        self.classifier = nn.Sequential(nn.Linear((backbone.fc.in_features // dr_n) ** 2, num_classes))
 
     def forward(self, x):
         # feature extraction 
@@ -46,7 +46,7 @@ class RBP(nn.Module):
         # normalization
         x = torch.nn.functional.normalize(torch.sign(x) * torch.sqrt(torch.abs(x) + 1e-5))
         # classification
-        x = self.classifiers(x)
+        x = self.classifier(x)
         return x
 
 
