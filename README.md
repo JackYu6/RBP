@@ -1,2 +1,2 @@
 # RBP
-RBP：Improved Residual Networks with Bilinear Pooling
+RBP：Improved residual networks with bilinear pooling for fine-grained image recognition 
